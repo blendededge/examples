@@ -10,7 +10,7 @@
       "url": "https://doohickeyai.free.beeceptor.com",
       "description": "Mock Server"
     },
-  ]
+  ],
   "paths": {
     "/customers": {
       "get": {
