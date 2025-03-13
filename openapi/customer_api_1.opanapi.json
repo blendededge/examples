@@ -14,6 +14,7 @@
   "paths": {
     "/customers": {
       "get": {
+        "operationId": "getCustomers",
         "summary": "Get a list of customers",
         "description": "Retrieve customer records, optionally filtered by created_at or updated_at timestamps.",
         "parameters": [
