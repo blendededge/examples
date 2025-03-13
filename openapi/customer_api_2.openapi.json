@@ -1,120 +1,135 @@
 {
-  "openapi": "3.0.3",
-  "info": {
-    "title": "Another Customer API",
-    "description": "API for managing user records in the system.",
-    "version": "1.0.0"
-  },
-  "paths": {
-    "/customer": {
-      "post": {
-        "summary": "Create a new customer",
-        "description": "Registers a new customer in the system.",
-        "requestBody": {
-          "required": true,
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "given_name": {
-                    "type": "string",
-                    "example": "Jane"
-                  },
-                  "family_name": {
-                    "type": "string",
-                    "example": "Smith"
-                  },
-                  "contact": {
-                    "type": "object",
-                    "properties": {
-                      "email_address": {
-                        "type": "string",
-                        "format": "email",
-                        "example": "janesmith@example.com"
-                      },
-                      "mobile_number": {
-                        "type": "string",
-                        "example": "+44-7700-900123"
-                      }
-                    }
-                  },
-                  "dob": {
-                    "type": "string",
-                    "format": "date",
-                    "example": "1985-07-20"
-                  },
-                  "residential_address": {
-                    "type": "object",
-                    "properties": {
-                      "line1": {
-                        "type": "string",
-                        "example": "456 Elm Street"
-                      },
-                      "town": {
-                        "type": "string",
-                        "example": "Manchester"
-                      },
-                      "region": {
-                        "type": "string",
-                        "example": "Greater Manchester"
-                      },
-                      "zip_code": {
-                        "type": "string",
-                        "example": "M1 1AA"
-                      },
-                      "nation": {
-                        "type": "string",
-                        "example": "UK"
-                      }
-                    }
-                  },
-                  "membership_tier": {
-                    "type": "string",
-                    "enum": ["Basic", "Premium", "VIP"],
-                    "example": "Premium"
-                  },
-                  "credit_balance": {
-                    "type": "number",
-                    "format": "float",
-                    "example": 150.50
-                  }
-                },
-                "required": ["given_name", "family_name", "contact", "dob"]
-              }
-            }
-          }
-        },
-        "responses": {
-          "201": {
-            "description": "Customer successfully created",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "user_id": {
-                      "type": "string",
-                      "format": "uuid",
-                      "example": "a1b2c3d4-e5f6-7890-1234-56789abcdef0"
-                    },
-                    "status": {
-                      "type": "string",
-                      "example": "Created"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "400": {
-            "description": "Invalid request data"
-          },
-          "500": {
-            "description": "Internal server error"
-          }
+    "openapi": "3.0.3",
+    "info": {
+        "title": "Another Customer API",
+        "description": "API for managing user records in the system.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "https://doohickeyai.free.beeceptor.com",
+            "description": "Mock Server"
         }
-      }
+    ],
+    "paths": {
+        "/customer": {
+            "post": {
+                "summary": "Create a new customer",
+                "description": "Registers a new customer in the system.",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "given_name": {
+                                        "type": "string",
+                                        "example": "Jane"
+                                    },
+                                    "family_name": {
+                                        "type": "string",
+                                        "example": "Smith"
+                                    },
+                                    "contact": {
+                                        "type": "object",
+                                        "properties": {
+                                            "email_address": {
+                                                "type": "string",
+                                                "format": "email",
+                                                "example": "janesmith@example.com"
+                                            },
+                                            "mobile_number": {
+                                                "type": "string",
+                                                "example": "+44-7700-900123"
+                                            }
+                                        }
+                                    },
+                                    "dob": {
+                                        "type": "string",
+                                        "format": "date",
+                                        "example": "1985-07-20"
+                                    },
+                                    "residential_address": {
+                                        "type": "object",
+                                        "properties": {
+                                            "line1": {
+                                                "type": "string",
+                                                "example": "456 Elm Street"
+                                            },
+                                            "town": {
+                                                "type": "string",
+                                                "example": "Manchester"
+                                            },
+                                            "region": {
+                                                "type": "string",
+                                                "example": "Greater Manchester"
+                                            },
+                                            "zip_code": {
+                                                "type": "string",
+                                                "example": "M1 1AA"
+                                            },
+                                            "nation": {
+                                                "type": "string",
+                                                "example": "UK"
+                                            }
+                                        }
+                                    },
+                                    "membership_tier": {
+                                        "type": "string",
+                                        "enum": [
+                                            "Basic",
+                                            "Premium",
+                                            "VIP"
+                                        ],
+                                        "example": "Premium"
+                                    },
+                                    "credit_balance": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 150.5
+                                    }
+                                },
+                                "required": [
+                                    "given_name",
+                                    "family_name",
+                                    "contact",
+                                    "dob"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Customer successfully created",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "properties": {
+                                        "user_id": {
+                                            "type": "string",
+                                            "format": "uuid",
+                                            "example": "a1b2c3d4-e5f6-7890-1234-56789abcdef0"
+                                        },
+                                        "status": {
+                                            "type": "string",
+                                            "example": "Created"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "Invalid request data"
+                    },
+                    "500": {
+                        "description": "Internal server error"
+                    }
+                }
+            }
+        }
     }
-  }
 }
