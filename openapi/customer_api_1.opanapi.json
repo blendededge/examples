@@ -5,6 +5,12 @@
     "description": "A simple API to retrieve customer records.",
     "version": "1.0.0"
   },
+  "servers": [
+    {
+      "url": "https://doohickeyai.free.beeceptor.com",
+      "description": "Mock Server"
+    },
+  ]
   "paths": {
     "/customers": {
       "get": {
