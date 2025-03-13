@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "paths": {
-    "/customers": {
+    "/customer": {
       "post": {
         "summary": "Create a new customer",
         "description": "Registers a new customer in the system.",
@@ -17,11 +17,6 @@
               "schema": {
                 "type": "object",
                 "properties": {
-                  "user_id": {
-                    "type": "string",
-                    "format": "uuid",
-                    "example": "a1b2c3d4-e5f6-7890-1234-56789abcdef0"
-                  },
                   "given_name": {
                     "type": "string",
                     "example": "Jane"
@@ -83,19 +78,9 @@
                     "type": "number",
                     "format": "float",
                     "example": 150.50
-                  },
-                  "created_on": {
-                    "type": "string",
-                    "format": "date-time",
-                    "example": "2024-03-10T08:30:00Z"
-                  },
-                  "last_modified": {
-                    "type": "string",
-                    "format": "date-time",
-                    "example": "2024-03-12T14:45:00Z"
                   }
                 },
-                "required": ["user_id", "given_name", "family_name", "contact", "dob"]
+                "required": ["given_name", "family_name", "contact", "dob"]
               }
             }
           }
